@@ -21,7 +21,7 @@ export default function Post({ postData }) {
     </Layout>
   );
 }
-
+//which returns an array of possible values for id.
 export async function getStaticPaths() {
   const paths = getAllPostIds();
   return {
@@ -29,6 +29,7 @@ export async function getStaticPaths() {
     fallback: false,
   };
 }
+//which fetches necessary data for the post with id.
 export async function getStaticProps({ params }) {
   const postData = await getPostData(params.id);
   return {
